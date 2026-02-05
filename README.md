@@ -1,6 +1,6 @@
 # geofair
-This is the website for the GeoFAIR project.
-Live site: https://geo-fair.github.io/geofair/
+This is the project website for NSF Award #2531941: "Disciplinary Improvements: Open and FAIR samples: maturing the sample data ecosystem"
+Live site:
 
 ## Structure
 - `docs/` → GitHub Pages source (static HTML/CSS/JS)
