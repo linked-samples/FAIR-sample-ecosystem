@@ -1,6 +1,6 @@
-# Open FAIR Samples
+# Open and FAIR Samples
 
-Website for the **Open FAIR Samples** project: *Open and FAIR samples: maturing the sample data ecosystem*.
+Website for NSF FAIROS Project: *Open and FAIR samples: maturing the sample data ecosystem*.
 
 Live site: https://linked-samples.github.io/fair-sample-ecosystem/
 
