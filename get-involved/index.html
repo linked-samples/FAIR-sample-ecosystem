@@ -3,83 +3,176 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Get Involved – GeoFAIR</title>
+  <title>Get Involved – Open FAIR Samples</title>
   <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* Involvement card grid */
+    .involve-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin: 2rem 0;
+    }
+
+    .involve-card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .involve-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border-color: var(--primary, #2e7d5e);
+    }
+
+    .involve-card h3 {
+      margin-top: 0;
+      color: var(--primary, #2e7d5e);
+    }
+
+    .involve-card .icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .involve-card a.cta-link {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 8px 16px;
+      background: var(--primary, #2e7d5e);
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9em;
+      transition: background 0.2s;
+    }
+
+    .involve-card a.cta-link:hover {
+      background: var(--secondary, #1f6fb2);
+    }
+  </style>
 </head>
 
 <body>
   <!-- HEADER -->
-   <header class="site-header">
-  <div class="container">
-    <a class="brand" href="index.html">
-      <img src="../assets/logos/geofair.png"
-           alt="GeoFAIR project logo"
-           class="brand-logo">
-      <span>GeoFAIR</span>
-    </a>
-    <nav class="nav" aria-label="Primary">
-      <!-- Temporarily disable home page
-      <a href="index.html" class="nav-link">Home</a>
-      -->
-      <a href="../about/index.html" class="nav-link">About</a>
-      <!-- Temporarily disabling discipline pages 
-      <a href="disciplines/ocean/index.html" class="nav-link">Ocean Sciences</a>
-      <a href="disciplines/hydrology/index.html" class="nav-link">Hydrology</a>
-      <a href="disciplines/seismology/index.html" class="nav-link">Seismology</a>
-      -->
-      <a href="../outputs/index.html" class="nav-link">Outputs</a>
-      <a href="get-involved/index.html" class="nav-link nav-cta">Get Involved</a>
-    </nav>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">
+        <span>Open FAIR Samples</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" aria-label="Primary">
+        <a href="../project-overview/index.html" class="nav-link">Project Overview</a>
+        <a href="../roadmaps/index.html" class="nav-link">Roadmaps</a>
+        <a href="../outputs/index.html" class="nav-link">Outputs</a>
+        <a href="../get-involved/index.html" class="nav-link nav-cta">Get Involved</a>
+      </nav>
+    </div>
+  </header>
 
   <!-- MAIN CONTENT -->
   <main class="container content">
     <section class="hero">
       <h1>Get Involved</h1>
       <p class="lead">
-        We are eager to engage broadly with each disciplinary community to ensure
-        existing data management efforts and repositories are represented in the work.
+        Community participation is essential to co-developing the roadmaps and
+        educational resources that will mature the sample data ecosystem.
+        Whether you are a researcher, repository manager, or publisher, there
+        are many ways to contribute.
       </p>
     </section>
 
-    <section>
-      <h2>Join the mailing list</h2>
-      <p>
-        If you are interested in receiving an occasional email (~1–3 per quarter)
-        about upcoming virtual and in-person workshop opportunities, town halls, and
-        conference presentations about this work, please sign up below for our mailing list.
-      </p>
-      <p><a href="https://wkf.ms/41ouGkE">Sign up for our mailing list!</a></p>
-    </section>
+    <div class="involve-grid">
+      <div class="involve-card">
+        <div class="icon">&#x1F4E7;</div>
+        <h3>Join the Mailing List</h3>
+        <p>
+          Receive occasional updates about upcoming workshops, hackathons,
+          surveys, and focus groups.
+        </p>
+        <!-- TODO: Replace with your mailing list link -->
+        <a href="#" class="cta-link">Sign Up &rarr;</a>
+      </div>
+
+      <div class="involve-card">
+        <div class="icon">&#x1F4CB;</div>
+        <h3>Take a Survey</h3>
+        <p>
+          Help us understand current sample data practices and pain points
+          in your community.
+        </p>
+        <!-- TODO: Replace with your survey link when available -->
+        <a href="#" class="cta-link">Coming Soon</a>
+      </div>
+
+      <div class="involve-card">
+        <div class="icon">&#x1F91D;</div>
+        <h3>Join a Focus Group</h3>
+        <p>
+          Participate in targeted conversations about workflows for
+          researchers, repositories, or publishers.
+        </p>
+        <!-- TODO: Replace with sign-up form link -->
+        <a href="#" class="cta-link">Express Interest &rarr;</a>
+      </div>
+
+      <div class="involve-card">
+        <div class="icon">&#x1F4BB;</div>
+        <h3>Attend a Hackathon</h3>
+        <p>
+          Help prototype and advance open science infrastructure for
+          sample-based research at our hybrid-format hackathons.
+        </p>
+        <!-- TODO: Replace with event registration link -->
+        <a href="#" class="cta-link">Coming Soon</a>
+      </div>
+    </div>
 
     <section>
-      <h2>Contact the project team</h2>
+      <h2>Contact the Project Team</h2>
       <p>
-        You may reach out any time to any of the project leaders:
+        You may reach out any time to the project leaders:
       </p>
       <ul>
         <li>
-          Shelley Stall – American Geophysical Union –
-          <a href="mailto:sstall@agu.org">sstall@agu.org</a>
-        </li>
-        <li>
-          Danie Kinkade – Woods Hole Oceanographic Institution –
-          <a href="mailto:dkinkade@whoi.edu">dkinkade@whoi.edu</a>
-        </li>
-        <li>
-          Natalie Raia – University of Arizona –
+          Natalie H. Raia – University of Arizona –
           <a href="mailto:nraia@arizona.edu">nraia@arizona.edu</a>
+        </li>
+        <li>
+          Andrea K. Thomer – University of Arizona –
+          <!-- TODO: Add Andrea Thomer's email address -->
+          <a href="mailto:athomer@arizona.edu">athomer@arizona.edu</a>
         </li>
       </ul>
     </section>
 
     <section>
-      <h2>Thank you</h2>
+      <h2>Who Should Get Involved?</h2>
       <p>
-        Thank you for your interest in GeoFAIR and your commitment to FAIR data.
-        Community participation is essential to co-developing sustainable, discipline-
-        specific frameworks that truly serve researchers.
+        We are eager to engage broadly across the sample data ecosystem.
+        We especially welcome participation from:
+      </p>
+      <ul>
+        <li><strong>Researchers</strong> who collect, analyze, or cite physical samples</li>
+        <li><strong>Data repository</strong> managers and staff</li>
+        <li><strong>Sample repository</strong> curators and managers</li>
+        <li><strong>Scholarly publishers</strong> and journal editors in Earth and space sciences</li>
+        <li><strong>Information scientists</strong> and metadata specialists</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Thank You</h2>
+      <p>
+        Thank you for your interest in Open FAIR Samples and your commitment
+        to making scientific samples findable, accessible, interoperable, and
+        reusable. Community participation is at the heart of this work.
       </p>
     </section>
   </main>
@@ -88,15 +181,14 @@
   <footer class="site-footer">
     <div class="container">
       <p>
-        The GeoFAIR project is funded by the U.S. National Science Foundation
-        (Award #2524899): “GEO OSE Track 1: Forging Cross-Stakeholder Partnerships
-        to Accelerate Geoscience Discoveries: Cultivating Sustainable Disciplinary
-        Open Science Communities”.
+        The Open FAIR Samples project is funded by the U.S. National Science Foundation
+        under the Findable Accessible Interoperable Reusable Open Science (FAIROS)
+        program: "Disciplinary Improvements: Open and FAIR samples: maturing the
+        sample data ecosystem".
       </p>
-      <p>Project dates: September 1, 2025 – August 31, 2027.</p>
       <p>
-        © <span id="year"></span> GeoFAIR Project ·
-        <a href="https://github.com/Geo-FAIR/geofair">GitHub</a>
+        &copy; <span id="year"></span> Open FAIR Samples Project &middot;
+        <a href="https://github.com/YOUR-ORG/open-fair-samples">GitHub</a>
       </p>
     </div>
   </footer>

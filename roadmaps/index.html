@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Roadmaps – Open FAIR Samples</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* Roadmap card styling */
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 2rem;
+    }
+
+    .roadmap-card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 2rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .roadmap-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      border-color: var(--primary, #2e7d5e);
+    }
+
+    .roadmap-card-icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .roadmap-card h3 {
+      margin-top: 0;
+      color: var(--primary, #2e7d5e);
+      font-size: 1.2em;
+    }
+
+    .roadmap-card p {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .roadmap-card .status {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.8em;
+      font-weight: 600;
+    }
+
+    .status-planning {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .status-active {
+      background: #d1fae5;
+      color: #065f46;
+    }
+
+    .status-complete {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    /* Activities section */
+    .activities-list {
+      margin-top: 1rem;
+    }
+
+    .activity-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .activity-item:last-child {
+      border-bottom: none;
+    }
+
+    .activity-icon {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .activity-icon.survey { background: #ede9fe; }
+    .activity-icon.workshop { background: #fce7f3; }
+    .activity-icon.hackathon { background: #d1fae5; }
+    .activity-icon.focus-group { background: #fef3c7; }
+
+    .activity-details h4 {
+      margin: 0 0 4px 0;
+      font-size: 1em;
+    }
+
+    .activity-details p {
+      margin: 0;
+      color: #666;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">
+        <span>Open FAIR Samples</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" aria-label="Primary">
+        <a href="../project-overview/index.html" class="nav-link">Project Overview</a>
+        <a href="../roadmaps/index.html" class="nav-link">Roadmaps</a>
+        <a href="../outputs/index.html" class="nav-link">Outputs</a>
+        <a href="../get-involved/index.html" class="nav-link nav-cta">Get Involved</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container content">
+    <section class="hero">
+      <h1>Community Roadmaps</h1>
+      <p class="lead">
+        We are co-developing four roadmaps — one for each key stakeholder group —
+        to coordinate and advance the adoption of persistent identifiers and
+        leading metadata practices for scientific samples.
+      </p>
+    </section>
+
+    <section>
+      <h2>The Four Roadmaps</h2>
+      <p>
+        Each roadmap is being developed through participatory design and social
+        science methods in direct collaboration with stakeholder communities.
+        The roadmaps will provide coordinated guidance tailored to each group's
+        workflows and needs.
+      </p>
+
+      <div class="roadmap-grid">
+        <div class="roadmap-card">
+          <div class="roadmap-card-icon">&#x1F52C;</div>
+          <h3>Researchers</h3>
+          <p>
+            Guidance for researchers on citing samples, using persistent
+            identifiers (PIDs), and connecting samples with related research
+            outputs and publications.
+          </p>
+          <p>
+            <em>Activities:</em> Four-semester cohort program, educational
+            module development.
+          </p>
+          <span class="status status-planning">Planning</span>
+        </div>
+
+        <div class="roadmap-card">
+          <div class="roadmap-card-icon">&#x1F4BE;</div>
+          <h3>Data Repositories</h3>
+          <p>
+            Guidance for data repositories on supporting sample PIDs, improving
+            metadata standards, and connecting sample data across systems.
+          </p>
+          <p>
+            <em>Activities:</em> Data repository-focused webinar series,
+            hybrid-format hackathons.
+          </p>
+          <span class="status status-planning">Planning</span>
+        </div>
+
+        <div class="roadmap-card">
+          <div class="roadmap-card-icon">&#x1F3DB;</div>
+          <h3>Sample Repositories</h3>
+          <p>
+            Guidance for sample repositories on adopting and supporting
+            persistent identifiers, improving interoperability, and aligning
+            with community metadata standards.
+          </p>
+          <p>
+            <em>Activities:</em> Landscape survey of U.S. ESS sample
+            repositories, case studies of repository realities and workflows.
+          </p>
+          <span class="status status-planning">Planning</span>
+        </div>
+
+        <div class="roadmap-card">
+          <div class="roadmap-card-icon">&#x1F4DA;</div>
+          <h3>Scholarly Publishers</h3>
+          <p>
+            Guidance for publishers on supporting sample citation in Earth and
+            space sciences, integrating sample PIDs into publishing workflows,
+            and promoting open sample data.
+          </p>
+          <p>
+            <em>Activities:</em> Assessing the state of sample citation in
+            ESS scholarly publishing, focus groups about supporting sample PIDs.
+          </p>
+          <span class="status status-planning">Planning</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Engagement Activities</h2>
+      <p>
+        The roadmaps are being developed through a range of community
+        engagement activities. These activities will be announced as they are
+        scheduled — <a href="../get-involved/index.html">sign up for updates</a>
+        to participate.
+      </p>
+
+      <div class="activities-list">
+        <div class="activity-item">
+          <div class="activity-icon survey">&#x1F4CB;</div>
+          <div class="activity-details">
+            <h4>Surveys</h4>
+            <p>Community-wide surveys to understand current sample data practices, pain points, and needs across stakeholder groups.</p>
+          </div>
+        </div>
+
+        <div class="activity-item">
+          <div class="activity-icon workshop">&#x1F3A4;</div>
+          <div class="activity-details">
+            <h4>Workshops</h4>
+            <p>Virtual and in-person workshops to co-develop roadmap content and prototype solutions with community members.</p>
+          </div>
+        </div>
+
+        <div class="activity-item">
+          <div class="activity-icon hackathon">&#x1F4BB;</div>
+          <div class="activity-details">
+            <h4>Hackathons</h4>
+            <p>Hybrid-format hackathons to advance development of open science infrastructure for sample-based research.</p>
+          </div>
+        </div>
+
+        <div class="activity-item">
+          <div class="activity-icon focus-group">&#x1F4AC;</div>
+          <div class="activity-details">
+            <h4>Focus Groups</h4>
+            <p>Targeted focus groups with specific stakeholder communities to deeply understand workflows and inform roadmap design.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        The Open FAIR Samples project is funded by the U.S. National Science Foundation
+        under the Findable Accessible Interoperable Reusable Open Science (FAIROS)
+        program: "Disciplinary Improvements: Open and FAIR samples: maturing the
+        sample data ecosystem".
+      </p>
+      <p>
+        &copy; <span id="year"></span> Open FAIR Samples Project &middot;
+        <a href="https://github.com/YOUR-ORG/open-fair-samples">GitHub</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

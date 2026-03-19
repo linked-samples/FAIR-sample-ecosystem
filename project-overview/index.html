@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project Overview – Open FAIR Samples</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .coming-soon {
+      text-align: center;
+      padding: 60px 20px;
+      background: #f9f9f9;
+      border-radius: 12px;
+      margin-top: 2rem;
+    }
+
+    .coming-soon .icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .coming-soon h2 {
+      margin-top: 0;
+      color: var(--primary, #2e7d5e);
+    }
+
+    .coming-soon p {
+      color: var(--muted, #64748b);
+      max-width: 500px;
+      margin: 0.5rem auto;
+    }
+
+    .coming-soon a {
+      color: var(--primary, #2e7d5e);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">
+        <!-- Replace with your project logo when available -->
+        <!-- <img src="../assets/logos/open-fair-samples.png"
+             alt="Open FAIR Samples project logo"
+             class="brand-logo"> -->
+        <span>Open FAIR Samples</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" aria-label="Primary">
+        <a href="../project-overview/index.html" class="nav-link">Project Overview</a>
+        <a href="../roadmaps/index.html" class="nav-link">Roadmaps</a>
+        <a href="../outputs/index.html" class="nav-link">Outputs</a>
+        <a href="../get-involved/index.html" class="nav-link nav-cta">Get Involved</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container content">
+    <section>
+      <h1>Project Overview</h1>
+      <p class="lead">
+        A detailed overview of the Open FAIR Samples project — goals,
+        methodology, timeline, and organizational structure.
+      </p>
+    </section>
+
+    <div class="coming-soon">
+      <div class="icon">&#x1F6A7;</div>
+      <h2>Coming Soon</h2>
+      <p>
+        This page is under development. In the meantime, visit our
+        <a href="../home/index.html">home page</a> for a summary of the
+        project, or explore the <a href="../roadmaps/index.html">community
+        roadmaps</a> to learn about our approach.
+      </p>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        The Open FAIR Samples project is funded by the U.S. National Science Foundation
+        under the Findable Accessible Interoperable Reusable Open Science (FAIROS)
+        program: "Disciplinary Improvements: Open and FAIR samples: maturing the
+        sample data ecosystem".
+        <!-- TODO: Add NSF award number when available -->
+      </p>
+      <!-- TODO: Add project dates when available -->
+      <!-- <p>Project dates: [Start Date] – [End Date].</p> -->
+      <p>
+        &copy; <span id="year"></span> Open FAIR Samples Project &middot;
+        <!-- TODO: Update with your GitHub repo URL -->
+        <a href="https://github.com/YOUR-ORG/open-fair-samples">GitHub</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

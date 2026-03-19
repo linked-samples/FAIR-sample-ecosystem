@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Open FAIR Samples</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* Floating logo style */
+    .floating-logo {
+      float: right;
+      margin: 0 0 20px 30px;
+      max-width: 250px;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Logo floating in hero section */
+    .hero {
+      position: relative;
+    }
+
+    .hero-logo {
+      float: right;
+      margin: 0 0 20px 30px;
+      max-width: 250px;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Engage box styling */
+    .engage-box {
+      float: right;
+      clear: right;
+      max-width: 280px;
+      width: 100%;
+      margin: 0 0 20px 30px;
+      padding: 20px;
+      background-color: #f0f7f4;
+      border: 2px solid var(--primary, #2e7d5e);
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .engage-box h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: var(--primary, #2e7d5e);
+      font-size: 1.1em;
+    }
+
+    .engage-box ul {
+      margin: 0;
+      padding-left: 20px;
+      list-style-type: disc;
+    }
+
+    .engage-box li {
+      margin-bottom: 10px;
+      font-size: 0.95em;
+      line-height: 1.4;
+    }
+
+    .engage-box a {
+      color: var(--primary, #2e7d5e);
+      text-decoration: none;
+    }
+
+    .engage-box a:hover {
+      text-decoration: underline;
+    }
+
+    /* Team section styling */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .team-member {
+      text-align: center;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .team-member:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .team-member-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 15px;
+      border: 3px solid var(--primary, #2e7d5e);
+    }
+
+    /* Placeholder when no photo is available */
+    .team-member-photo-placeholder {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: 0 auto 15px;
+      border: 3px solid var(--primary, #2e7d5e);
+      background: #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: var(--muted, #64748b);
+    }
+
+    .team-member-name {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .team-member-role {
+      color: var(--primary, #2e7d5e);
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .team-member-affiliation {
+      color: #666;
+      font-size: 0.9em;
+    }
+
+    /* Stakeholder diagram area */
+    .stakeholder-diagram {
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .stakeholder-diagram img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    /* Add spacing after hero to accommodate floated elements */
+    .hero::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero-logo {
+        float: none;
+        display: block;
+        margin: 20px auto;
+        max-width: 200px;
+      }
+
+      .engage-box {
+        float: none;
+        margin: 20px auto;
+        max-width: 100%;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">
+        <!-- Replace with your project logo when available -->
+        <!-- <img src="../assets/logos/open-fair-samples.png"
+             alt="Open FAIR Samples project logo"
+             class="brand-logo"> -->
+        <span>Open FAIR Samples</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" aria-label="Primary">
+        <a href="../project-overview/index.html" class="nav-link">Project Overview</a>
+        <a href="../roadmaps/index.html" class="nav-link">Roadmaps</a>
+        <a href="../outputs/index.html" class="nav-link">Outputs</a>
+        <a href="../get-involved/index.html" class="nav-link nav-cta">Get Involved</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container content">
+    <section class="hero">
+      <h1>Open FAIR Samples</h1>
+      <p class="lead">
+        Open and FAIR samples: maturing the sample data ecosystem through
+        coordinated guidance, persistent identifiers, and leading metadata practices.
+      </p>
+    </section>
+
+    <div class="content-with-logo">
+      <!-- Replace with your project logo when available -->
+      <!-- <img src="../assets/logos/open-fair-samples.png" 
+           alt="Open FAIR Samples logo" 
+           class="floating-logo"> -->
+
+      <div class="engage-box">
+        <h3>Ways to Engage:</h3>
+        <ul>
+          <li>
+            <!-- TODO: Replace with your mailing list link -->
+            <a href="#">Sign up for project updates</a> to hear about upcoming workshops, hackathons, and focus groups
+          </li>
+          <li>
+            <!-- TODO: Replace with your survey/form link -->
+            <a href="#">Participate in a survey or focus group</a> about sample data practices in your community
+          </li>
+          <li>
+            <!-- TODO: Replace with conference schedule link -->
+            <a href="#">Find us at an upcoming conference</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <section>
+      <h2>Challenge</h2>
+      <p>
+        Scientific samples are difficult to discover, cite, and connect with
+        related research outputs. Fragmented infrastructure and inconsistent
+        adoption of persistent identifiers limit sample FAIRness. Key
+        stakeholders — researchers, data repositories, sample repositories,
+        and scholarly publishers — lack coordinated guidance for implementing
+        open sample data practices.
+      </p>
+    </section>
+
+    <section>
+      <h2>Technical Approach</h2>
+      <p>
+        The Open FAIR Samples project will develop <strong>four community
+        roadmaps</strong> — one each with researchers, data repositories,
+        sample repositories, and scholarly publishers — to advance the adoption
+        of persistent identifiers and leading metadata practices for scientific
+        samples.
+      </p>
+      <p>
+        We apply <strong>participatory design and social science methods</strong>
+        to understand and improve stakeholder workflows, and leverage existing
+        NSF infrastructure and community networks to foster scalable and
+        sustainable implementation.
+      </p>
+
+      <!-- Stakeholder diagram placeholder — replace with your quad-chart 
+           intersection illustration when available -->
+      <!-- <div class="stakeholder-diagram">
+        <img src="../assets/images/stakeholder-diagram.png" 
+             alt="Diagram showing the four stakeholder groups and their interactions">
+      </div> -->
+    </section>
+
+    <section>
+      <h2>Broader Impacts</h2>
+      <ul>
+        <li>
+          Enhance the <strong>long-term value of NSF investments</strong> in
+          national sample collections
+        </li>
+        <li>
+          Support <strong>FAIR samples and reproducibility</strong> in
+          sample-based research
+        </li>
+        <li>
+          Empower researcher <strong>alignment with NSF directives</strong>
+          promoting sample metadata archiving and reuse
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Key Deliverables</h2>
+      <ul>
+        <li>
+          <strong>Four community roadmaps</strong> — co-developed with
+          researchers, data repositories, sample repositories, and scholarly
+          publishers
+        </li>
+        <li>
+          Undergraduate and graduate <strong>educational modules</strong> and
+          peer-reviewed publications, co-authored with community
+        </li>
+        <li>
+          <strong>Hackathons, surveys, workshops, and focus groups</strong> to
+          prototype, socialize, and advance development and adoption of open
+          science infrastructure for sample-based research
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Project Team</h2>
+      <p>
+        The Open FAIR Samples project is led by:
+      </p>
+
+      <div class="team-grid">
+        <div class="team-member">
+          <!-- Photo: reuse from GeoFAIR repo or replace with updated headshot -->
+          <img src="../assets/team/natalie-raia.png" 
+               alt="Natalie H. Raia" 
+               class="team-member-photo">
+          <div class="team-member-name">Natalie H. Raia</div>
+          <div class="team-member-role">Principal Investigator</div>
+          <div class="team-member-affiliation">University of Arizona</div>
+        </div>
+
+        <div class="team-member">
+          <!-- TODO: Add photo for Andrea Thomer -->
+          <div class="team-member-photo-placeholder">AT</div>
+          <div class="team-member-name">Andrea K. Thomer</div>
+          <div class="team-member-role">Co-Principal Investigator</div>
+          <div class="team-member-affiliation">University of Arizona</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partner/Collaborator section — uncomment and populate when ready
+    <section>
+      <h2>Our Partners</h2>
+      <p>
+        This project engages a broad network of sample repositories, 
+        data repositories, and scholarly publishers. Partner logos and 
+        links will be added as formal partnerships are established.
+      </p>
+    </section>
+    -->
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        The Open FAIR Samples project is funded by the U.S. National Science Foundation
+        under the Findable Accessible Interoperable Reusable Open Science (FAIROS)
+        program: "Disciplinary Improvements: Open and FAIR samples: maturing the
+        sample data ecosystem".
+        <!-- TODO: Add NSF award number when available -->
+      </p>
+      <!-- TODO: Add project dates when available -->
+      <!-- <p>Project dates: [Start Date] – [End Date].</p> -->
+      <p>
+        &copy; <span id="year"></span> Open FAIR Samples Project &middot;
+        <!-- TODO: Update with your GitHub repo URL -->
+        <a href="https://github.com/YOUR-ORG/open-fair-samples">GitHub</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
