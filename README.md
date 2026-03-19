@@ -54,7 +54,7 @@ After forking, search the codebase for `TODO` comments to find items that need u
 - [ ] Add project logo to `assets/logos/` and uncomment logo references in HTML
 - [ ] Update NSF award number in footer text
 - [ ] Add project start/end dates in footer
-- [ ] Update GitHub repository URL (replace `YOUR-ORG/open-fair-samples`)
+- [ ] Update GitHub repository URL (replace `linked-samples/FAIR-sample-ecosystem`)
 - [ ] Add team photos to `assets/team/`
 - [ ] Add Andrea Thomer's photo and verify email address
 - [ ] Add mailing list / signup form URLs
