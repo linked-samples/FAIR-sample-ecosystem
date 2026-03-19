@@ -2,7 +2,7 @@
 
 Website for the **Open FAIR Samples** project: *Open and FAIR samples: maturing the sample data ecosystem*.
 
-Live site: https://YOUR-ORG.github.io/open-fair-samples/
+Live site: https://linked-samples.github.io/open-fair-samples/
 
 ## About
 
