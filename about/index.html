@@ -5,6 +5,245 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About GeoFAIR</title>
   <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* Floating logo style */
+    .floating-logo {
+      float: right;
+      margin: 0 0 20px 30px;
+      max-width: 250px;
+      width: 100%;
+      height: auto;
+    }
+    
+    /* Logo floating in hero section */
+    .hero {
+      position: relative;
+    }
+    
+    .hero-logo {
+      float: right;
+      margin: 0 0 20px 30px;
+      max-width: 250px;
+      width: 100%;
+      height: auto;
+    }
+    
+    /* Engage box styling */
+    .engage-box {
+      float: right;
+      clear: right;
+      max-width: 250px;
+      width: 100%;
+      margin: 0 0 20px 30px;
+      padding: 20px;
+      background-color: #f5f5f5;
+      border: 2px solid #0066cc;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .engage-box h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: #0066cc;
+      font-size: 1.1em;
+    }
+    
+    .engage-box ul {
+      margin: 0;
+      padding-left: 20px;
+      list-style-type: disc;
+    }
+    
+    .engage-box li {
+      margin-bottom: 10px;
+      font-size: 0.95em;
+      line-height: 1.4;
+    }
+    
+    .engage-box a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    
+    .engage-box a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Partner carousel styling */
+    .partner-carousel {
+      background-color: #f9f9f9;
+      border-top: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 30px 0;
+      margin: 40px 0;
+      overflow: hidden;
+    }
+    
+    .partner-carousel h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+      font-size: 1.5em;
+    }
+    
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      padding: 20px 0;
+    }
+    
+    /* Fade effect on edges */
+    .carousel-container::before,
+    .carousel-container::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 150px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    
+    .carousel-container::before {
+      left: 0;
+      background: linear-gradient(to right, #f9f9f9 0%, transparent 100%);
+    }
+    
+    .carousel-container::after {
+      right: 0;
+      background: linear-gradient(to left, #f9f9f9 0%, transparent 100%);
+    }
+    
+    .carousel-track {
+      display: flex;
+      gap: 60px;
+      animation: scroll 30s linear infinite;
+      width: fit-content;
+    }
+    
+    .carousel-track:hover {
+      animation-play-state: paused;
+    }
+    
+    .partner-link {
+      display: inline-block;
+      text-decoration: none;
+    }
+    
+    .partner-logo {
+      height: 80px;
+      width: auto;
+      object-fit: contain;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: all 0.3s ease;
+    }
+    
+    .partner-link:hover .partner-logo {
+      filter: grayscale(0%);
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    
+    /* Team section styling */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    
+    .team-member {
+      text-align: center;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .team-member:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .team-member-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 15px;
+      border: 3px solid #0066cc;
+    }
+    
+    .team-member-name {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #333;
+      margin-bottom: 5px;
+    }
+    
+    .team-member-role {
+      color: #0066cc;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    
+    .team-member-affiliation {
+      color: #666;
+      font-size: 0.9em;
+    }
+    
+    /* Add spacing after hero to accommodate floated elements */
+    .hero::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero-logo {
+        float: none;
+        display: block;
+        margin: 20px auto;
+        max-width: 200px;
+      }
+      
+      .engage-box {
+        float: none;
+        margin: 20px auto;
+        max-width: 100%;
+      }
+      
+      .partner-logo {
+        height: 60px;
+      }
+      
+      .carousel-track {
+        gap: 40px;
+      }
+      
+      .carousel-container::before,
+      .carousel-container::after {
+        width: 50px;
+      }
+      
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -27,20 +266,42 @@ class="brand-logo">
       <a href="../disciplines/hydrology/index.html" class="nav-link">Hydrology</a>
       <a href="../disciplines/seismology/index.html" class="nav-link">Seismology</a>
       -->
-<a href="../get-involved/index.html" class="nav-link nav-cta">Get Involved</a>
+      <a href="../outputs/index.html" class="nav-link">Outputs</a>
+      <a href="../get-involved/index.html" class="nav-link nav-cta">Get Involved</a>
 </nav>
 </div>
 </header>
 
   <!-- MAIN CONTENT -->
   <main class="container content">
-    <section class="hero">
+    <section class="hero">      
       <h1>About GeoFAIR</h1>
       <p class="lead">
         GeoFAIR is building a community-governed, discipline-specific framework to
         support FAIR data practices across Earth and environmental sciences.
       </p>
     </section>
+
+    <div class="content-with-logo">
+     <img src="../assets/logos/geofair.png" 
+           alt="GeoFAIR logo" 
+           class="floating-logo">
+
+    <div class="engage-box">
+        <h3>Ways to Engage:</h3>
+        <ul>
+          <li>
+            <a href="https://wkf.ms/41ouGkE">Complete this form</a> to receive occasional emails about virtual workshops, conference events
+          </li>
+          <li>
+            Self-nominate to become a Disciplinary Liaison - <a href="https://forms.gle/wGd1fh8x78DjSqB69">more information here</a>
+          </li>
+          <li>
+            <a href="YOUR_CONFERENCE_LINK_HERE">Find us at an upcoming conference</a>
+          </li>
+        </ul>
+      </div>
+    </div>
 
     <section>
       <h2>Project Motivation</h2>
@@ -51,7 +312,7 @@ class="brand-logo">
       </p>
       <p>
         The goal is to empower these target disciplines to be knowledgeable of, and
-        connected to, their community’s existing cyberinfrastructure resources,
+        connected to, their community's existing cyberinfrastructure resources,
         technologies, and leading practices, and to be proactive in effectively and
         efficiently managing and sharing FAIR research outputs.
       </p>
@@ -109,13 +370,13 @@ class="brand-logo">
         Representatives include:
       </p>
       <ul>
-        <li>Reyna Broadhurst (Cross-Disciplinary)</li>
+        <li>Reyna Broadhurst (Cross-Domain)</li>
         <li>Justin Buck (Ocean sciences)</li>
         <li>Kyle Onda (Hydrology)</li>
         <li>Helle Pedersen (Seismology)</li>
         <li>Peter Pissierssens (Ocean sciences)</li>
-        <li>Jordan Reed (Hydrology)</li>
-        <li>Lesley Wyborn (Seismology)</li>
+        <li>Jordan Read (Hydrology)</li>
+        <li>Lesley Wyborn (Cross-Domain)</li>
       </ul>
     </section>
 
@@ -124,12 +385,143 @@ class="brand-logo">
       <p>
         The GeoFAIR project is led by:
       </p>
-      <ul>
-        <li><strong>PI:</strong> Shelley Stall – American Geophysical Union</li>
-        <li><strong>Co-PI:</strong> Danie Kinkade – Woods Hole Oceanographic Institution</li>
-        <li><strong>Co-PI:</strong> Natalie Raia – University of Arizona</li>
-      </ul>
+      
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="../assets/team/shelley-stall.jpg" 
+               alt="Shelley Stall" 
+               class="team-member-photo">
+          <div class="team-member-name">Shelley Stall</div>
+          <div class="team-member-role">Principal Investigator</div>
+          <div class="team-member-affiliation">American Geophysical Union</div>
+        </div>
+        
+        <div class="team-member">
+          <img src="../assets/team/danie-kinkade.jpeg" 
+               alt="Danie Kinkade" 
+               class="team-member-photo">
+          <div class="team-member-name">Danie Kinkade</div>
+          <div class="team-member-role">Co-Principal Investigator</div>
+          <div class="team-member-affiliation">Woods Hole Oceanographic Institution</div>
+        </div>
+        
+        <div class="team-member">
+          <img src="../assets/team/natalie-raia.png" 
+               alt="Natalie Raia" 
+               class="team-member-photo">
+          <div class="team-member-name">Natalie Raia</div>
+          <div class="team-member-role">Co-Principal Investigator</div>
+          <div class="team-member-affiliation">University of Arizona</div>
+        </div>
+      </div>
     </section>
+    
+    <!-- Partner Carousel -->
+    <div class="partner-carousel">
+      <h2>Our Partners</h2>
+      <div class="carousel-container">
+        <div class="carousel-track">
+          <!-- First set of logos -->
+          <a href="https://www.anu.edu.au" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/anu.png" alt="Partner 1" class="partner-logo">
+          </a>
+          <a href="https://www.auscope.org.au" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/auscope.png" alt="Partner 2" class="partner-logo">
+          </a>
+          <a href="https://www.awi.de/en/" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/awi.png" alt="Partner 3" class="partner-logo">
+          </a>
+          <a href="https://www.bas.ac.uk" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/bas.png" alt="Partner 4" class="partner-logo">
+          </a>
+          <a href="https://www.bodc.ac.uk" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/bodc.png" alt="Partner 5" class="partner-logo">
+          </a>
+          <a href="https://codata.org" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/codata.png" alt="Partner 6" class="partner-logo">
+          </a>
+          <a href="https://www.cuahsi.org" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/cuahsi.png" alt="Partner 6" class="partner-logo">
+          </a>
+          <a href="https://www.earthscope.org" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/earthscope.png" alt="Partner 6" class="partner-logo">
+          </a>
+          <a href="https://portal.edirepository.org/nis/home.jsp" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/edi.png" alt="Partner 6" class="partner-logo">
+          </a>
+          <a href="https://www.egu.eu" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/egu.png" alt="Partner 6" class="partner-logo">
+          </a>
+          <a href="https://www.esipfed.org" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/esip.png" alt="Partner 6" class="partner-logo">
+          </a>
+          <a href="https://www.isterre.fr/english/home-page/" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/isterre.png" alt="Partner 6" class="partner-logo">
+          </a>
+          <a href="https://www.oclc.org/en/home.html" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/oclc.png" alt="Partner 6" class="partner-logo">
+          </a>
+          <a href="https://www.pangaea.de" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/pangaea.png" alt="Partner 6" class="partner-logo">
+          </a>
+          <a href="https://seismo.ethz.ch/en/home/" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/swissseisomologicalservice.png" alt="Partner 6" class="partner-logo">
+          </a>
+          <a href="https://worlddatasystem.org" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/wds.png" alt="Partner 6" class="partner-logo">
+          </a>
+          <!-- Duplicate set for seamless loop -->
+          <a href="https://www.anu.edu.au" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/anu.png" alt="Partner 1" class="partner-logo">
+          </a>
+          <a href="https://www.auscope.org.au" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/auscope.png" alt="Partner 2" class="partner-logo">
+          </a>
+          <a href="https://www.awi.de/en/" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/awi.png" alt="Partner 3" class="partner-logo">
+          </a>
+          <a href="https://www.bas.ac.uk" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/bas.png" alt="Partner 4" class="partner-logo">
+          </a>
+          <a href="https://www.bodc.ac.uk" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/bodc.png" alt="Partner 5" class="partner-logo">
+          </a>
+          <a href="https://codata.org" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/codata.png" alt="Partner 6" class="partner-logo">
+          </a>
+          <a href="https://www.cuahsi.org" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/cuahsi.png" alt="Partner 6" class="partner-logo">
+          </a>
+          <a href="https://www.earthscope.org" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/earthscope.png" alt="Partner 6" class="partner-logo">
+          </a>
+          <a href="https://portal.edirepository.org/nis/home.jsp" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/edi.png" alt="Partner 6" class="partner-logo">
+          </a>
+          <a href="https://www.egu.eu" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/egu.png" alt="Partner 6" class="partner-logo">
+          </a>
+          <a href="https://www.esipfed.org" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/esip.png" alt="Partner 6" class="partner-logo">
+          </a>
+          <a href="https://www.isterre.fr/english/home-page/" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/isterre.png" alt="Partner 6" class="partner-logo">
+          </a>
+          <a href="https://www.oclc.org/en/home.html" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/oclc.png" alt="Partner 6" class="partner-logo">
+          </a>
+          <a href="https://www.pangaea.de" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/pangaea.png" alt="Partner 6" class="partner-logo">
+          </a>
+          <a href="https://seismo.ethz.ch/en/home/" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/swissseisomologicalservice.png" alt="Partner 6" class="partner-logo">
+          </a>
+          <a href="https://worlddatasystem.org" class="partner-link" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/logos/wds.png" alt="Partner 6" class="partner-logo">
+          </a>
+        </div>
+      </div>
+    </div>
   </main>
 
   <!-- FOOTER -->
@@ -137,9 +529,9 @@ class="brand-logo">
     <div class="container">
       <p>
         The GeoFAIR project is funded by the U.S. National Science Foundation
-        (Award #2524899): “GEO OSE Track 1: Forging Cross-Stakeholder Partnerships
+        (Award #2524899): "GEO OSE Track 1: Forging Cross-Stakeholder Partnerships
         to Accelerate Geoscience Discoveries: Cultivating Sustainable Disciplinary
-        Open Science Communities”.
+        Open Science Communities".
       </p>
       <p>Project dates: September 1, 2025 – August 31, 2027.</p>
       <p>
