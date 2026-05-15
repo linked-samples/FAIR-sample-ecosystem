@@ -13,9 +13,8 @@ This project is funded by the U.S. National Science Foundation under the Findabl
 ## Structure
 
 ```
-├── index.html                    (Redirect → Home)
+├── index.html                    (Homepage — project summary, team, deliverables)
 ├── styles.css                    (Shared stylesheet)
-├── home/index.html               (Homepage — project summary, team, deliverables)
 ├── project-overview/index.html   (Detailed project overview — placeholder)
 ├── roadmaps/index.html           (Four community roadmaps)
 ├── outputs/index.html            (Publications, modules, presentations)
