@@ -2,7 +2,7 @@
 
 Website for NSF FAIROS Project: *Open and FAIR samples: maturing the sample data ecosystem*.
 
-Live site: https://linked-samples.github.io/fair-sample-ecosystem/
+Live site: https://linked-samples.github.io/FAIR-sample-ecosystem/
 
 ## About
 
