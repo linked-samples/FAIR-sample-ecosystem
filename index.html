@@ -70,6 +70,120 @@
       text-decoration: underline;
     }
 
+    /* Ecosystem image floated below the engage box */
+    .ecosystem-image {
+      float: right;
+      clear: right;
+      max-width: 280px;
+      width: 100%;
+      margin: 0 0 20px 30px;
+    }
+
+    .ecosystem-image-wrap {
+      position: relative;
+      cursor: zoom-in;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 3px solid #c06a3a;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .ecosystem-image-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: filter 0.2s ease;
+    }
+
+    .ecosystem-image-wrap:hover img {
+      filter: brightness(0.75);
+    }
+
+    .ecosystem-image-wrap .zoom-icon {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      pointer-events: none;
+    }
+
+    .ecosystem-image-wrap:hover .zoom-icon {
+      opacity: 1;
+    }
+
+    .ecosystem-caption {
+      margin: 8px 0 0;
+      font-size: 0.95em;
+      color: #555;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    .ecosystem-caption a {
+      color: var(--primary, #2e7d5e);
+      text-decoration: none;
+    }
+
+    .ecosystem-caption a:hover {
+      text-decoration: underline;
+    }
+
+    .zoom-icon svg {
+      width: 48px;
+      height: 48px;
+      fill: none;
+      stroke: #fff;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      drop-shadow: 0 2px 4px rgba(0,0,0,0.4);
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-height: 95vh;
+      max-width: 95vw;
+      width: auto;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 16px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.8;
+    }
+
+    .lightbox-close:hover {
+      opacity: 1;
+    }
+
     /* Team section styling */
     .team-grid {
       display: grid;
@@ -168,6 +282,12 @@
         max-width: 100%;
       }
 
+      .ecosystem-image {
+        float: none;
+        margin: 20px auto;
+        max-width: 100%;
+      }
+
       .team-grid {
         grid-template-columns: 1fr;
       }
@@ -223,6 +343,28 @@
           </li>
         </ul>
       </div>
+      <div class="ecosystem-image">
+        <div class="ecosystem-image-wrap" onclick="document.getElementById('ecosystem-lightbox').classList.add('open')" role="button" aria-label="Expand ecosystem diagram">
+          <img src="assets/image_sampleecosystem.png" alt="Open and FAIR Samples ecosystem diagram">
+          <div class="zoom-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"/>
+              <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+              <line x1="11" y1="8" x2="11" y2="14"/>
+              <line x1="8" y1="11" x2="14" y2="11"/>
+            </svg>
+          </div>
+        </div>
+        <p class="ecosystem-caption">
+          Click the image above to explore the sample data ecosystem, or read more at <a href="https://doi.org/10.1038/s41597-025-05295-z" target="_blank" rel="noopener noreferrer">doi.org/10.1038/s41597-025-05295-z</a>
+        </p>
+      </div>
+
+      <!-- Lightbox -->
+      <div id="ecosystem-lightbox" class="lightbox" onclick="this.classList.remove('open')">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <img src="assets/image_sampleecosystem.png" alt="Open and FAIR Samples ecosystem diagram">
+      </div>
       <h2>The Challenge</h2>
       <p>
         Scientific samples are difficult to discover, cite, and connect with
@@ -246,13 +388,6 @@
         Our project centers <strong>participatory design and social science methods</strong>
         to understand key barriers to adoption, perceptions of value, and opportunities for future incentives and infrastructure support.
       </p>
-
-      <!-- Stakeholder diagram placeholder — replace with your quad-chart 
-           intersection illustration when available -->
-      <!-- <div class="stakeholder-diagram">
-        <img src="assets/images/stakeholder-diagram.png" 
-             alt="Diagram showing the four stakeholder groups and their interactions">
-      </div> -->
     </section>
 
     <section>
@@ -343,6 +478,9 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') document.getElementById('ecosystem-lightbox').classList.remove('open');
+    });
   </script>
 </body>
 </html>
