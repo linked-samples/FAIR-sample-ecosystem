@@ -32,4 +32,4 @@ This project is funded by the U.S. National Science Foundation under the Findabl
 
 ## Credits
 
-Site structure adapted from the [GeoFAIR project](https://github.com/Geo-FAIR/geofair) (MIT License).
+Site structure adapted from the [GeoFAIR project](https://github.com/Geo-FAIR/geofair) (MIT License) with coding assistance using Claude Code.
